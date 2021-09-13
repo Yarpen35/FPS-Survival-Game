@@ -1,0 +1,60 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MouseLook : MonoBehaviour
+{   
+    [SerializeField]
+    private Transform playerRoot, lookRoot;
+
+    [SerializeField]
+    private bool invert;
+
+    [SerializeField]
+    private bool can_Unlock = true;
+
+    [SerializeField]
+    private float sensivity = 5f;
+
+    [SerializeField]
+    private int smooth_Steps = 10;
+
+    [SerializeField]
+    private float smooth_Weight = 0.4f;
+
+    [SerializeField]
+    private float roll_Angle = 10f;
+
+    [SerializeField]
+    private Vector2 default_Look_Limits = new Vector2(-70f, 80f);
+
+    private Vector2 look_Angles;
+    private Vector2 current_Mouse_Look;
+    private Vector2 smooth_Move;
+
+    private float current_Roll_Angle;
+
+    private int last_Look_Frame;
+    
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    
+    void Update()
+    {
+        LockAndUnlockCursor();
+    }
+
+    void LockAndUnlockCursor() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(Cursor.lockState == CursorLockMode.Locked) {
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
+    }
+}
