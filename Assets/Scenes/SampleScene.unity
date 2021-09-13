@@ -280,26 +280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 589773079, guid: 602c01511c895cf4d82e216128c79660, type: 3}
-      propertyPath: footstep_Clip.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 589773079, guid: 602c01511c895cf4d82e216128c79660, type: 3}
-      propertyPath: footstep_Clip.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2429399f1ca311945a12f37a32c14aed, type: 3}
-    - target: {fileID: 589773079, guid: 602c01511c895cf4d82e216128c79660, type: 3}
-      propertyPath: footstep_Clip.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: f0761d807b3ae1d4598a50357cb58a5e, type: 3}
-    - target: {fileID: 589773079, guid: 602c01511c895cf4d82e216128c79660, type: 3}
-      propertyPath: footstep_Clip.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: f27be18648dcceb46a46397f5c4c2e62, type: 3}
-    - target: {fileID: 589773079, guid: 602c01511c895cf4d82e216128c79660, type: 3}
-      propertyPath: footstep_Clip.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3005916a05630f2439d211eaa6faba3d, type: 3}
     - target: {fileID: 7504330644376256592, guid: 602c01511c895cf4d82e216128c79660, type: 3}
       propertyPath: m_Name
       value: Player
@@ -346,6 +326,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504330644376256594, guid: 602c01511c895cf4d82e216128c79660, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504330645309801382, guid: 602c01511c895cf4d82e216128c79660, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
