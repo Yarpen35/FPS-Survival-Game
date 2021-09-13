@@ -26,6 +26,9 @@ public class MouseLook : MonoBehaviour
     private float roll_Angle = 10f;
 
     [SerializeField]
+    private float roll_Speed = 3f;
+
+    [SerializeField]
     private Vector2 default_Look_Limits = new Vector2(-70f, 80f);
 
     private Vector2 look_Angles;
@@ -42,9 +45,12 @@ public class MouseLook : MonoBehaviour
     }
 
     
-    void Update()
-    {
+    void Update() {
         LockAndUnlockCursor();
+
+        if(Cursor.lockState == CursorLockMode.Locked) {
+            LookAround();
+        }
     }
 
     void LockAndUnlockCursor() {
@@ -56,5 +62,20 @@ public class MouseLook : MonoBehaviour
                 Cursor.visible = false;
             }
         }
+    }
+
+    void LookAround() {
+        current_Mouse_Look = new Vector2(Input.GetAxis(MouseAxis.MOUSE_Y), Input.GetAxis(MouseAxis.MOUSE_X));
+
+        look_Angles.x += current_Mouse_Look.x * sensivity * (invert ? 1f : -1f);
+        look_Angles.y += current_Mouse_Look.y * sensivity;
+
+        look_Angles.x = Mathf.Clamp(look_Angles.x, default_Look_Limits.x, default_Look_Limits.y);
+
+        current_Roll_Angle = Mathf.Lerp(current_Roll_Angle, Input.GetAxisRaw(MouseAxis.MOUSE_X) * roll_Angle, Time.deltaTime * roll_Speed);
+
+        lookRoot.localRotation = Quaternion.Euler(look_Angles.x, 0f, current_Roll_Angle);
+        playerRoot.localRotation = Quaternion.Euler(0f, look_Angles.y, 0f);
+
     }
 }
