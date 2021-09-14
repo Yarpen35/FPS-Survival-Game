@@ -6,8 +6,13 @@ TagManager:
   tags:
   - Axe
   - Revolver
-  - Shotgun
+  - Crosshair
+  - Look Root
+  - FP Camera
+  - Arrow
   - Assault Rifle
+  - Shotgun
+  - Enemy
   layers:
   - Default
   - TransparentFX
