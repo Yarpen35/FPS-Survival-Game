@@ -280,6 +280,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7504330644062716903, guid: 602c01511c895cf4d82e216128c79660, type: 3}
+      propertyPath: m_TagString
+      value: Assault Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504330644316289298, guid: 602c01511c895cf4d82e216128c79660, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504330644316289298, guid: 602c01511c895cf4d82e216128c79660, type: 3}
+      propertyPath: m_TagString
+      value: Shotgun
+      objectReference: {fileID: 0}
     - target: {fileID: 7504330644376256592, guid: 602c01511c895cf4d82e216128c79660, type: 3}
       propertyPath: m_Name
       value: Player
@@ -327,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 7504330644376256594, guid: 602c01511c895cf4d82e216128c79660, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504330645433433041, guid: 602c01511c895cf4d82e216128c79660, type: 3}
+      propertyPath: m_TagString
+      value: Revolver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 602c01511c895cf4d82e216128c79660, type: 3}

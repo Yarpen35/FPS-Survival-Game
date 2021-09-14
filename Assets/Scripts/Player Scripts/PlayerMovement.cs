@@ -17,15 +17,15 @@ public class PlayerMovement : MonoBehaviour {
     void Awake() {
         character_Controller = GetComponent<CharacterController>();
     }
-
-    void Update() {
-
+	
+	void Update () {
         MoveThePlayer();
-    }
+	}
 
     void MoveThePlayer() {
 
-        move_Direction = new Vector3(Input.GetAxis(Axis.HORIZONTAL), 0f, Input.GetAxis(Axis.VERTICAL));
+        move_Direction = new Vector3(Input.GetAxis(Axis.HORIZONTAL), 0f,
+                                     Input.GetAxis(Axis.VERTICAL));
 
         move_Direction = transform.TransformDirection(move_Direction);
         move_Direction *= speed * Time.deltaTime;
@@ -34,27 +34,25 @@ public class PlayerMovement : MonoBehaviour {
 
         character_Controller.Move(move_Direction);
 
+
     }
 
     void ApplyGravity() {
 
-        if(character_Controller.isGrounded) {
+        vertical_Velocity -= gravity * Time.deltaTime;
 
-            vertical_Velocity -= gravity * Time.deltaTime;
-
-            PlayerJump();
-        } else {
-            vertical_Velocity -= gravity * Time.deltaTime;
-        }
+        PlayerJump();
 
         move_Direction.y = vertical_Velocity * Time.deltaTime;
+
     }
 
     void PlayerJump() {
 
-        if(character_Controller.isGrounded && Input.GetKey(KeyCode.Space)) {
+        if(character_Controller.isGrounded && Input.GetKeyDown(KeyCode.Space)) {
             vertical_Velocity = jump_Force;
         }
 
     }
+
 }
