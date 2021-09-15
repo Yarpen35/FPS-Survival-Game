@@ -36,7 +36,7 @@ public class ArrowBowScript : MonoBehaviour {
     void OnTriggerEnter(Collider target) {
         if(target.tag == Tags.ENEMY_TAG) {
 
-           // target.GetComponent<HealthScript>().ApplyDamage(damage);
+           target.GetComponent<HealthScript>().ApplyDamage(damage);
 
             gameObject.SetActive(false);
 

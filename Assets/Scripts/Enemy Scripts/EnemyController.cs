@@ -47,18 +47,21 @@ public class EnemyController : MonoBehaviour {
 
     }
 
+
     void Start () {
 
         enemy_State = EnemyState.PATROL;
 
         patrol_Timer = patrol_For_This_Time;
 
+    
         attack_Timer = wait_Before_Attack;
 
+      
         current_Chase_Distance = chase_Distance;
 
 	}
-	
+
 	void Update () {
 		
         if(enemy_State == EnemyState.PATROL) {
@@ -144,7 +147,6 @@ public class EnemyController : MonoBehaviour {
 
             enemy_State = EnemyState.PATROL;
 
-
             patrol_Timer = patrol_For_This_Time;
 
             if (chase_Distance != current_Chase_Distance) {
@@ -206,5 +208,38 @@ public class EnemyController : MonoBehaviour {
     public EnemyState Enemy_State {
         get; set;
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

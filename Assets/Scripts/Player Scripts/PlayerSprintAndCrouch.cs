@@ -26,7 +26,6 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
     private float sprint_Step_Distance = 0.25f;
     private float crouch_Step_Distance = 0.5f;
 
-    //private PlayerStats player_Stats;
 
     private float sprint_Value = 100f;
     public float sprint_Treshold = 10f;
@@ -39,7 +38,6 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
 
         player_Footsteps = GetComponentInChildren<PlayerFootsteps>();
 
-       // player_Stats = GetComponent<PlayerStats>();
 
 	}
     void Start() {
@@ -94,15 +92,12 @@ public class PlayerSprintAndCrouch : MonoBehaviour {
 
             }
 
-            //player_Stats.Display_StaminaStats(sprint_Value);
-
         } else {
 
             if(sprint_Value != 100f) {
 
                 sprint_Value += (sprint_Treshold / 2f) * Time.deltaTime;
 
-                //player_Stats.Display_StaminaStats(sprint_Value);
 
                 if(sprint_Value > 100f) {
                     sprint_Value = 100f;
